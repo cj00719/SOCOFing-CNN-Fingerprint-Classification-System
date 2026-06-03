@@ -120,7 +120,7 @@ def preprocess_image(image):
 
 uploaded_file = st.file_uploader(
 
-    "Upload Fingerprint Image",
+    "sample 1",
 
     type=['bmp', 'png', 'jpg', 'jpeg']
 )
