@@ -99,12 +99,8 @@ def preprocess_image(image):
 
     image = np.array(image)
 
-    image = cv2.cvtColor(
-
-        image,
-
-        cv2.COLOR_BGR2GRAY
-    )
+  if len(image.shape) == 3:
+    image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
 
     image = cv2.resize(
 
