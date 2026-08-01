@@ -171,7 +171,11 @@ if uploaded_file is not None:
     # MODEL PREDICTION
     # ========================================================
 
+    try:
     predictions = model.predict(processed_image)
+except Exception as e:
+    st.exception(e)
+    st.stop()
 
     gender_pred = predictions[0]
 
