@@ -55,7 +55,18 @@ def load_model():
 
     return model
 
-model = load_model()
+from pathlib import Path
+
+MODEL_PATH = Path("socofing_advanced_model.h5")
+
+if not MODEL_PATH.exists():
+    st.error("Model file not found.")
+    st.stop()
+
+model = tf.keras.models.load_model(
+    MODEL_PATH,
+    compile=False
+)
 
 # ============================================================
 # CLASS LABELS
