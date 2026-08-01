@@ -63,10 +63,9 @@ if not MODEL_PATH.exists():
     st.error("Model file not found.")
     st.stop()
 
-model = tf.keras.models.load_model(
-    MODEL_PATH,
-    compile=False
-)
+st.success("Model located successfully.")
+
+model = load_model()
 
 # ============================================================
 # CLASS LABELS
